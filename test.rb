@@ -72,7 +72,7 @@ coupons = [
         #do nothing
       end
     end
-    cart
+    puts cart
   end
 
 #Create a checkout method that calculates the total cost of the consolidated cart
