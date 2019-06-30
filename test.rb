@@ -122,7 +122,8 @@ final_cart = {
 
 # puts final_cart["AVOCADO"][:price]
 
+cart_total = 0
 final_cart.each do |item, attributes|
-  puts attributes[:price]
+  attributes[:price]
 
 end
