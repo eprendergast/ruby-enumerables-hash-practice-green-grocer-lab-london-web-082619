@@ -4,9 +4,9 @@ cart = {
   "SOY MILK"     => {:price => 4.50, :clearance => true,  :count => 1}
 }
 
-cart.each do |item|
-  puts item[:price]
-end
+# cart.each do |item|
+#   puts item[:price]
+# end
 
 
 # #discount the price of every item on clearance by twenty percent
