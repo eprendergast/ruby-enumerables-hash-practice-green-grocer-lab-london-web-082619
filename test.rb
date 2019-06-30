@@ -55,7 +55,7 @@ def apply_coupons(cart, coupons)
       #else, the cart doesn't have the minimum number of items required to qualify for the coupon
       #OR the item doesn't exist in the cart
       else
-        false
+        #donothing
       end
     end
   end
