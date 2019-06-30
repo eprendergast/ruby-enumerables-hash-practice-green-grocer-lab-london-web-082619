@@ -101,6 +101,12 @@ def apply_clearance(cart)
   cart
 end
 
+cart = {
+  "PEANUT BUTTER" => {:price => 2.40, :clearance => true,  :count => 2},
+  "KALE"         => {:price => 3.00, :clearance => false, :count => 3},
+  "SOY MILK"     => {:price => 3.60, :clearance => true,  :count => 1}
+}
+
 #Create a checkout method that calculates the total cost of the consolidated cart
 #It consolidates the cart, applies coupons, and applies discounts. Then, it totals the cost of the entire cart,
 #accounting for each item and their prices, and returns this value.
@@ -111,6 +117,6 @@ def checkout(cart, coupons)
   # Apply coupons...
   apply_coupons(consolidated_cart, coupons)
   #Total the cost of the cart...
-
+                         #=> 45
   #If the cart total is > 100, then apply 10%off
 end
