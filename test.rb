@@ -90,7 +90,14 @@ def checkout(cart, coupons)
   #Apply clearance...
   final_cart = apply_clearance(coupons_applied)
   #Total the cost of the cart...
+  cart_total = 0
+  final_cart.each do |item, attributes|
+    item_total = attributes[:price] * attributes[:count]
+    cart_total = cart_total + item_total
+  end
 
+  final_total = cart_total.round(2)
+  puts final_total
 
 
   # cart_total = 0.00
