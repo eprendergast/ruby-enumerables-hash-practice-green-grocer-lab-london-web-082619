@@ -5,7 +5,9 @@ cart = {
 }
 
 cart.each do |item|
-  puts item
+  item.each do |key, value|
+    puts key
+  end
 end
 
 
