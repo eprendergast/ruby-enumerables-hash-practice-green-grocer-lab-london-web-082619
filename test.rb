@@ -10,6 +10,12 @@ cart = [
   {"BEETS" => {:price => 2.50, :clearance => false}}
 ]
 
+	coupons = [
+		{:item => "AVOCADO", :num => 2, :cost => 5.00},
+		{:item => "BEER", :num => 2, :cost => 20.00},
+		{:item => "CHEESE", :num => 3, :cost => 15.00}
+	]
+
 #Create a checkout method that calculates the total cost of the consolidated cart
 #It consolidates the cart, applies coupons, and applies discounts. Then, it totals the cost of the entire cart,
 #accounting for each item and their prices, and returns this value.
@@ -32,3 +38,5 @@ def checkout(cart, coupons)
   end
   cart_total
 end
+
+def checkout(cart, coupons)
