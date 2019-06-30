@@ -119,6 +119,9 @@ def checkout(cart, coupons)
   #Apply clearance...
   final_cart = apply_clearance(coupons_applied)
   #Total the cost of the cart...
-                         #=> 45
+  cart_total = 0.00
+  cart.each do |item, attributes|
+    cart_total = cart_total + attributes[:price]
+  end
   #If the cart total is > 100, then apply 10%off
 end
