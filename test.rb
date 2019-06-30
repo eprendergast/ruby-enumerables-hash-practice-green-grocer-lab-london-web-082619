@@ -120,8 +120,9 @@ final_cart = {
   "BEER W/COUPON"=>{:price=>10.0, :clearance=>false, :count=>2}
 }
 
-puts final_cart["AVOCADO"][:price]
+# puts final_cart["AVOCADO"][:price]
 
 final_cart.each do |item, attributes|
   puts attributes[:price]
+  
 end
