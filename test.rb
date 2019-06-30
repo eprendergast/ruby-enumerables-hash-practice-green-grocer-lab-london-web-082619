@@ -9,6 +9,7 @@ cart = [
   {"PEANUTBUTTER" => {:price => 3.00, :clearance => true}},
   {"BEETS" => {:price => 2.50, :clearance => false}}
 ]
+
 coupons = [
 		{:item => "AVOCADO", :num => 2, :cost => 5.00},
 		{:item => "BEER", :num => 2, :cost => 20.00},
@@ -38,4 +39,4 @@ def checkout(cart, coupons)
   cart_total
 end
 
-def checkout(cart, coupons)
+checkout(cart, coupons)
