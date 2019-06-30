@@ -81,7 +81,7 @@ end
 # }
 
 
-#input 
+#input
 cart = {
   "PEANUT BUTTER" => {:price => 3.00, :clearance => true,  :count => 2},
   "KALE"         => {:price => 3.00, :clearance => false, :count => 3}
@@ -89,9 +89,9 @@ cart = {
 }
 #discount the price of every item on clearance by twenty percent
 def apply_clearance(cart)
-  cart.each do |item, attributes| 
+  cart.each do |item, attributes|
     if item[:clearance] == true
-      item[:price] *= 0.2 
+      item[:price] *= 0.2
       item[:price].round(2)
     else
       #do nothing
