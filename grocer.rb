@@ -107,6 +107,7 @@ cart = {
   "SOY MILK"     => {:price => 3.60, :clearance => true,  :count => 1}
 }
 
+
 #Create a checkout method that calculates the total cost of the consolidated cart
 #It consolidates the cart, applies coupons, and applies discounts. Then, it totals the cost of the entire cart,
 #accounting for each item and their prices, and returns this value.
@@ -118,14 +119,17 @@ def checkout(cart, coupons)
   coupons_applied = apply_coupons(consolidated_cart, coupons)
   #Apply clearance...
   final_cart = apply_clearance(coupons_applied)
-  #Total the cost of the cart...
-  cart_total = 0.00
-  cart.each do |item, attributes|
-    cart_total = cart_total + (attributes[:count] * attributes[:price])
+  #start cart total at zero
+  cart_total = 0
+  #calculate the cost of the cart...
+  final_cart.each do |item, attributes|
+    item_total = attributes[:price] * attributes[:count]
+    cart_total = cart_total + item_total
   end
-  #If the cart total is > 100...
-  if cart_total > 100
-    cart_total *= 0.9
+  final_total = cart_total.round(2)
+  # If the final_tota is > 100...
+  if final_total > 100
+    final_total *= 0.9
   end
-  cart_total
+  final_total
 end
