@@ -99,7 +99,7 @@ def checkout(cart, coupons)
   final_total = cart_total.round(2)
   puts final_total
 
-  
+
   cart_total = 0.00
   cart.each do |item, attributes|
     cart_total = cart_total + (attributes[:count] * attributes[:price])
