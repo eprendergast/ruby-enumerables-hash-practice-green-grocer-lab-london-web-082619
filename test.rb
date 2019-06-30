@@ -43,10 +43,12 @@ def apply_coupons(cart, coupons)
         remaining_full_price = cart[discounted_item][:count] % cpn[:num] #3%2 = 1
         #calculate the number of items that will have the discounted price applied
         coupon_applied = cart[discounted_item][:count] - remaining_full_price
+        #maintain the clearance status
+        clearance = cart[discounted_item][:count]
         #create new discounted item
-        cart["#{discounted_item} W/COUPON"] = {:price => new_price, :clearance => true, :count => coupon_applied}
+        cart["#{discounted_item} W/COUPON"] = {:price => new_price, :clearance => clearance, :count => coupon_applied}
         #change the previous cart number to the number remaining
-        cart[discounted_item][:count] = remaining_full_price
+        cart[discounted_item][:clearance] = remaining_full_price
         #if the number remaining at full price is zero...
         if cart[discounted_item][:count] == 0
           #delete the hash
