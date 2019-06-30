@@ -54,11 +54,13 @@ def apply_coupons(cart, coupons)
         #calculate the discounted price for the item
         new_price = cpn[:cost] / cpn[:num]
         #calculate the number of items remaining at full price
-        remaining_full_price = cart[discounted_item][:count] - cpn[:num] #3%2 = 1
+        remaining_full_price = cart[discounted_item][:count] % cpn[:num] #3%2 = 1
         #calculate the number of items that will have the discounted price applied
         coupon_applied = cart[discounted_item][:count] - remaining_full_price
+        #maintain the clearance status
+        clearance = cart[discounted_item][:clearance]
         #create new discounted item
-        cart["#{discounted_item} W/COUPON"] = {:price => new_price, :clearance => true, :count => coupon_applied}
+        cart["#{discounted_item} W/COUPON"] = {:price => new_price, :clearance => clearance, :count => coupon_applied}
         #change the previous cart number to the number remaining
         cart[discounted_item][:count] = remaining_full_price
         #if the number remaining at full price is zero...
@@ -69,7 +71,7 @@ def apply_coupons(cart, coupons)
       #else, the cart doesn't have the minimum number of items required to qualify for the coupon
       #OR the item doesn't exist in the cart
       else
-        false
+        #donothing
       end
     end
   end
