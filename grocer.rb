@@ -102,12 +102,12 @@ def apply_clearance(cart)
 end
 
 #Create a checkout method that calculates the total cost of the consolidated cart
-#It consolidates the cart, applies coupons, and applies discounts. Then, it totals the cost of the entire cart, 
+#It consolidates the cart, applies coupons, and applies discounts. Then, it totals the cost of the entire cart,
 #accounting for each item and their prices, and returns this value.
 #if, after all coupons and discounts, the cart's total is over $100, the customer gets an additional 10% off. Apply this discount when appropriate.
 def checkout(cart, coupons)
   #Consolidate cart...
-  consolidated_cart = consolidate_cart(cart) 
+  consolidated_cart = consolidate_cart(cart)
   # Apply coupons...
   apply_coupons(consolidated_cart, coupons)
   #Total the cost of the cart...
