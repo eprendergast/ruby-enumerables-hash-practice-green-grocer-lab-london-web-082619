@@ -93,15 +93,15 @@ def checkout(cart, coupons)
 
 
 
-  cart_total = 0.00
-  cart.each do |item, attributes|
-    cart_total = cart_total + (attributes[:count] * attributes[:price])
-  end
-  If the cart total is > 100...
-  if cart_total > 100
-    cart_total *= 0.9
-  end
-  final_cart
+  # cart_total = 0.00
+  # cart.each do |item, attributes|
+  #   cart_total = cart_total + (attributes[:count] * attributes[:price])
+  # end
+  # If the cart total is > 100...
+  # if cart_total > 100
+  #   cart_total *= 0.9
+  # end
+  # final_cart
 end
 
 checkout(cart, coupons)
