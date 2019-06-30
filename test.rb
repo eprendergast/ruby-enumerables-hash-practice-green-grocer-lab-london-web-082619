@@ -40,7 +40,7 @@ def apply_coupons(cart, coupons)
         #calculate the discounted price for the item
         new_price = cpn[:cost] / cpn[:num]
         #calculate the number of items remaining at full price
-        remaining_full_price = cart[discounted_item][:count] % cpn[:num] #3%2 = 1
+        remaining_full_price = cart[discounted_item][:count] % cpn[:num] 
         #calculate the number of items that will have the discounted price applied
         coupon_applied = cart[discounted_item][:count] - remaining_full_price
         #maintain the clearance status
