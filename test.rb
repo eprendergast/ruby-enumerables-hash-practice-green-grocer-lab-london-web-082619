@@ -6,7 +6,7 @@ cart = {
 
 cart.each do |item, attributes|
   attributes.each do |key, value|
-    puts value[:clearance]
+    puts key[:clearance]
   end
 end
 
