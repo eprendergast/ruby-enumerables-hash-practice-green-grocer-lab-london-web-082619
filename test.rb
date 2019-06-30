@@ -120,4 +120,4 @@ final_cart = {
   "BEER W/COUPON"=>{:price=>10.0, :clearance=>false, :count=>2}
 }
 
-final_cart["AVOCADO"]
+puts final_cart["AVOCADO"]
