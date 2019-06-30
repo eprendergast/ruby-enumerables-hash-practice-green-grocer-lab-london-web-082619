@@ -1,23 +1,28 @@
 cart = {
-  "PEANUT BUTTER" => {:price => 3.00, :clearance => true,  :count => 2},
-  "KALE" => {:price => 3.00, :clearance => false, :count => 3},
-  "SOY MILK" => {:price => 4.50, :clearance => true,  :count => 1}
+  "PEANUT BUTTER" => {:price => 2.40, :clearance => true,  :count => 2},
+  "KALE"         => {:price => 3.00, :clearance => false, :count => 3},
+  "SOY MILK"     => {:price => 3.60, :clearance => true,  :count => 1}
 }
 
-cart.each do |item, attributes|
-  p attributes[:price]
-end
-
-
-#discount the price of every item on clearance by twenty percent
-def apply_clearance(cart)
+#Create a checkout method that calculates the total cost of the consolidated cart
+#It consolidates the cart, applies coupons, and applies discounts. Then, it totals the cost of the entire cart,
+#accounting for each item and their prices, and returns this value.
+#if, after all coupons and discounts, the cart's total is over $100, the customer gets an additional 10% off. Apply this discount when appropriate.
+def checkout(cart, coupons)
+  #Consolidate cart...
+  consolidated_cart = consolidate_cart(cart)
+  # Apply coupons...
+  coupons_applied = apply_coupons(consolidated_cart, coupons)
+  #Apply clearance...
+  final_cart = apply_clearance(coupons_applied)
+  #Total the cost of the cart...
+  cart_total = 0.00
   cart.each do |item, attributes|
-    if attributes[:clearance] == true
-      attributes[:price] *= 0.2
-      (attributes[:price]).round(2)
-    else
-      #do nothing
-    end
+    cart_total = cart_total + (attributes[:count] * attributes[:price])
   end
-  cart
+  #If the cart total is > 100...
+  if cart_total > 100
+    cart_total *= 0.9
+  end
+  cart_total
 end
