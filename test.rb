@@ -4,8 +4,8 @@ cart = {
   "SOY MILK" => {:price => 4.50, :clearance => true,  :count => 1}
 }
 
-cart.each do |item|
-  item.each do |key, value|
+cart.each do |item, attributes|
+  attributes.each do |key, value|
     puts value
   end
 end
