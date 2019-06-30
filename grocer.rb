@@ -82,11 +82,11 @@ end
 
 
 #input
-cart = {
-  "PEANUT BUTTER" => {:price => 3.00, :clearance => true,  :count => 2},
-  "KALE"         => {:price => 3.00, :clearance => false, :count => 3},
-  "SOY MILK"     => {:price => 4.50, :clearance => true,  :count => 1}
-}
+# cart = {
+#   "PEANUT BUTTER" => {:price => 3.00, :clearance => true,  :count => 2},
+#   "KALE"         => {:price => 3.00, :clearance => false, :count => 3},
+#   "SOY MILK"     => {:price => 4.50, :clearance => true,  :count => 1}
+# }
 
 #discount the price of every item on clearance by twenty percent
 def apply_clearance(cart)
@@ -102,11 +102,11 @@ def apply_clearance(cart)
 end
 
 #output
-{
-  "PEANUT BUTTER" => {:price => 2.40, :clearance => true,  :count => 2},
-  "KALE"         => {:price => 3.00, :clearance => false, :count => 3},
-  "SOY MILK"     => {:price => 3.60, :clearance => true,  :count => 1}
-}
+# {
+#   "PEANUT BUTTER" => {:price => 2.40, :clearance => true,  :count => 2},
+#   "KALE"         => {:price => 3.00, :clearance => false, :count => 3},
+#   "SOY MILK"     => {:price => 3.60, :clearance => true,  :count => 1}
+# }
 
 def checkout(cart, coupons)
   # code here
