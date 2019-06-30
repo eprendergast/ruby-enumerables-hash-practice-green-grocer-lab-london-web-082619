@@ -1,8 +1,14 @@
-cart = {
-  "PEANUT BUTTER" => {:price => 2.40, :clearance => true,  :count => 2},
-  "KALE"         => {:price => 3.00, :clearance => false, :count => 3},
-  "SOY MILK"     => {:price => 3.60, :clearance => true,  :count => 1}
-}
+cart = [
+  {"AVOCADO" => {:price => 3.00, :clearance => true}},
+  {"KALE" => {:price => 3.00, :clearance => false}},
+  {"BLACK_BEANS" => {:price => 2.50, :clearance => false}},
+  {"ALMONDS" => {:price => 9.00, :clearance => false}},
+  {"TEMPEH" => {:price => 3.00, :clearance => true}},
+  {"CHEESE" => {:price => 6.50, :clearance => false}},
+  {"BEER" => {:price => 13.00, :clearance => false}},
+  {"PEANUTBUTTER" => {:price => 3.00, :clearance => true}},
+  {"BEETS" => {:price => 2.50, :clearance => false}}
+]
 
 #Create a checkout method that calculates the total cost of the consolidated cart
 #It consolidates the cart, applies coupons, and applies discounts. Then, it totals the cost of the entire cart,
