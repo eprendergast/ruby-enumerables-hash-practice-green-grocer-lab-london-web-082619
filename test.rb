@@ -5,7 +5,7 @@ cart = {
 }
 
 cart.each do |item, attributes|
-  p item, attributes
+  p attributes[:price]
 end
 
 
