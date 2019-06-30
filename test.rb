@@ -127,7 +127,8 @@ final_cart = {
 
 cart_total = 0
 final_cart.each do |item, attributes|
-  cart_total = cart_total + (attributes[:price] * attributes[:count])
+  item_total = attributes[:price] * attributes[:count]
+  cart_total = cart_total + item_total
   puts cart_total
 end
 
