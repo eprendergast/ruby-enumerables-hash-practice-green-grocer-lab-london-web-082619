@@ -124,5 +124,5 @@ final_cart = {
 
 final_cart.each do |item, attributes|
   puts attributes[:price]
-  
+
 end
