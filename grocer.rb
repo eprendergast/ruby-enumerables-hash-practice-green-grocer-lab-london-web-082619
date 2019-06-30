@@ -63,11 +63,6 @@ def apply_coupons(cart, coupons)
         cart["#{discounted_item} W/COUPON"] = {:price => new_price, :clearance => clearance, :count => coupon_applied}
         #change the previous cart number to the number remaining
         cart[discounted_item][:count] = remaining_full_price
-        #if the number remaining at full price is zero...
-        # if cart[discounted_item][:count] == 0
-        #   #delete the hash
-        #   cart.delete(discounted_item)
-        # end
       #else, the cart doesn't have the minimum number of items required to qualify for the coupon
       #OR the item doesn't exist in the cart
       else
