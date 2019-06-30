@@ -1,31 +1,10 @@
-#input
-cart = [
-  {"AVOCADO" => {:price => 3.00, :clearance => true }},
-  {"AVOCADO" => {:price => 3.00, :clearance => true }},
-  {"AVOCADO" => {:price => 3.00, :clearance => true }},
-  {"KALE"    => {:price => 3.00, :clearance => false}}
-]
-#define method
-def consolidate_cart(cart)
-  consolidated_cart = {}
-  cart.each do |item|
-    item.each do |key, value|
-      if consolidated_cart.has_key?(key) #if consolidated_cart already has that item...
-        consolidated_cart[key][:count] += 1 #increase the count by 1
-      else #else, if the item doesn't already exist in the consolidated_cart...
-        consolidated_cart[key] = value #add item to the cart
-        consolidated_cart[key][:count] = 1 #add a count to the attributes hash and set it equal to one
-      end
-    end
-  end
-  consolidated_cart
-end
-
 #output
 cart = {
   "AVOCADO" => {:price => 3.00, :clearance => true, :count => 3},
   "KALE"    => {:price => 3.00, :clearance => false, :count => 1}
 }
+
+
 #input
 coupons = [
   {:item => "AVOCADO", :num => 2, :cost => 5.00},
@@ -33,14 +12,21 @@ coupons = [
   {:item => "CHEESE", :num => 3, :cost => 15.00}
 ]
 
-puts coupons[0][:item] #=> AVOCADO
-puts cart["AVOCADO"] #=> {:price=>3.0, :clearance=>true, :count=>3}
-puts cart[coupons[0][:item]] #=> {:price=>3.0, :clearance=>true, :count=>3}
-puts cart[coupons[0][:item]][:count] #=> 3
+# puts coupons[0][:item] #=> AVOCADO
+# puts cart["AVOCADO"] #=> {:price=>3.0, :clearance=>true, :count=>3}
+# puts cart[coupons[0][:item]] #=> {:price=>3.0, :clearance=>true, :count=>3}
+# puts cart[coupons[0][:item]][:count] #=> 3
+#
+# coupons.each do |cpn|
+#   puts cpn[:item]
+# end
+  #
+  # coupons.each do |cpn|
+  #   discounted_item = cpn[:item]
+  #   puts cart[discounted_item][:count]
+  #   puts discounted_number = cpn[:num]
+  # end
 
-coupons.each do |cpn|
-  puts cpn[:item]
-end #=> AVOCADO BEER CHEESE
 
 #given a consolidated cart, returns a cart with coupons applied
 def apply_coupons(cart, coupons)
@@ -54,7 +40,7 @@ def apply_coupons(cart, coupons)
         #calculate the discounted price for the item
         new_price = cpn[:cost] / cpn[:num]
         #calculate the number of items remaining at full price
-        remaining_full_price = cart[discounted_item][:count] - cpn[:num] #3%2 = 1
+        remaining_full_price = cart[discounted_item][:count] % cpn[:num] #3%2 = 1
         #calculate the number of items that will have the discounted price applied
         coupon_applied = cart[discounted_item][:count] - remaining_full_price
         #create new discounted item
@@ -73,21 +59,7 @@ def apply_coupons(cart, coupons)
       end
     end
   end
-  cart
+  puts cart
 end
 
-#output
-# {
-#   "AVOCADO" => {:price => 3.00, :clearance => true, :count => 1},
-#   "KALE"    => {:price => 3.00, :clearance => false, :count => 1},
-#   "AVOCADO W/COUPON" => {:price => 2.50, :clearance => true, :count => 2},
-# }
-
-
-def apply_clearance(cart)
-  # code here
-end
-
-def checkout(cart, coupons)
-  # code here
-end
+apply_coupons(cart, coupons)
