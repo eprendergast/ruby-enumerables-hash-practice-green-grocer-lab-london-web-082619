@@ -106,14 +106,15 @@ checkout(cart, coupons)
 
 
 
-final_cart = {
-  "AVOCADO"=>{:price=>2.4, :clearance=>true, :count=>1},
-  "KALE"=>{:price=>3.0, :clearance=>false, :count=>1},
-  "BLACK_BEANS"=>{:price=>2.5, :clearance=>false, :count=>1},
-  "ALMONDS"=>{:price=>9.0, :clearance=>false, :count=>1},
-  "TEMPEH"=>{:price=>2.4, :clearance=>true, :count=>1},
-  "CHEESE"=>{:price=>6.5, :clearance=>false, :count=>1},
-  "BEER"=>{:price=>13.0, :clearance=>false, :count=>1},
-  "PEANUTBUTTER"=>{:price=>2.4, :clearance=>true, :count=>1},
-  "BEETS"=>{:price=>2.5, :clearance=>false, :count=>1}
+final_cart = {"AVOCADO"=>{:price=>2.4, :clearance=>true, :count=>1}, 
+"KALE"=>{:price=>3.0, :clearance=>false, :count=>1}, 
+"BLACK_BEANS"=>{:price=>2.5, :clearance=>false, :count=>1},
+"ALMONDS"=>{:price=>9.0, :clearance=>false, :count=>1}, 
+"TEMPEH"=>{:price=>2.4, :clearance=>true, :count=>1}, 
+"CHEESE"=>{:price=>6.5, :clearance=>false, :count=>1}, 
+"BEER"=>{:price=>13.0, :clearance=>false, :count=>0}, 
+"PEANUTBUTTER"=>{:price=>2.4, :clearance=>true, :count=>1}, 
+"BEETS"=>{:price=>2.5, :clearance=>false, :count=>1}, 
+"AVOCADO W/COUPON"=>{:price=>2.0, :clearance=>true, :count=>2}, 
+"BEER W/COUPON"=>{:price=>10.0, :clearance=>false, :count=>2}
 }
