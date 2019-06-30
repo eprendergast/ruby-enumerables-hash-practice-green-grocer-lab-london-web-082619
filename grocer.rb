@@ -121,7 +121,11 @@ def checkout(cart, coupons)
   #Total the cost of the cart...
   cart_total = 0.00
   cart.each do |item, attributes|
-    cart_total = cart_total + attributes[:price]
+    cart_total = cart_total + (attributes[:count] * attributes[:price])
   end
-  #If the cart total is > 100, then apply 10%off
+  #If the cart total is > 100...
+  if cart_total > 100
+    cart_total *= 0.9
+  end
+  cart_total
 end
